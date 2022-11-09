@@ -48,9 +48,7 @@ defmodule FoodTruckBuddy.FoodTrucksTest do
     end
 
     test "get_all_food_trucks\0 gets all food trucks" do
-      food_trucks = FoodTrucks.get_all_food_trucks()
-
-      assert length(food_trucks) == 1
+      assert length(FoodTrucks.get_all_food_trucks()) == 1
     end
   end
 
