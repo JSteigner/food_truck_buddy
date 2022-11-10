@@ -1,0 +1,19 @@
+<div>
+  <.form
+    let={form}
+    for={@changeset}
+    as={:changeset}
+    id="zip_code_form"
+    phx-change="change"
+    phx-submit="submit"
+  >
+    <section class="container">
+      <%= text_input(form, :zip_code, [minlength: 5, maxlength: 5]) %>
+      <%= submit("Search for Food Trucks", phx_disable_with: "Searching...") %>
+      <button type="button" phx-click="clear">Clear</button>
+    </section>
+  </.form>
+  <%= if !is_nil(@food_trucks) do %>
+    <.food_trucks_table headers={@headers} food_trucks={@food_trucks} />
+  <% end %>
+</div>
